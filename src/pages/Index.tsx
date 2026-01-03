@@ -1,19 +1,14 @@
 import { Download, Linkedin, Mail, Github } from "lucide-react";
+import { useState } from "react";
 import profileImage from "@/assets/profile-placeholder.jpg";
+import hoverImage from "@/assets/profile-hover.jpg";
 
 const Index = () => {
-  return (
-    <main className="min-h-screen flex items-center justify-center bg-background px-6">
-      <div className="flex flex-col items-center gap-8 max-w-md text-center">
-        {/* Profile Photo */}
-        <div className="w-40 h-40 rounded-full overflow-hidden border-2 border-border shadow-lg">
-          <img
-            src={profileImage}
-            alt="Profile photo"
-            className="w-full h-full object-cover"
-          />
-        </div>
+  const [isHovered, setIsHovered] = useState(false);
 
+  return (
+    <main className="min-h-screen flex items-center justify-center bg-background px-6 py-12">
+      <div className="flex flex-col items-center gap-8 max-w-md text-center">
         {/* Name & Title */}
         <div className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">
@@ -22,6 +17,19 @@ const Index = () => {
           <p className="text-muted-foreground">
             Software Engineer · Designer · Creator
           </p>
+        </div>
+
+        {/* Profile Photo with Hover Effect */}
+        <div
+          className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-border shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <img
+            src={isHovered ? hoverImage : profileImage}
+            alt="Profile photo"
+            className="w-full h-full object-cover transition-opacity duration-300"
+          />
         </div>
 
         {/* Links */}
@@ -64,6 +72,11 @@ const Index = () => {
             <Mail className="w-5 h-5" />
           </a>
         </div>
+
+        {/* Copyright Notice */}
+        <footer className="pt-8 text-sm text-muted-foreground">
+          © {new Date().getFullYear()} Your Name. All rights reserved.
+        </footer>
       </div>
     </main>
   );
