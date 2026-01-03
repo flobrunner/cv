@@ -9,6 +9,9 @@ export default defineConfig(() => ({
   server: {
     host: "::",
     port: 8080,
+    watch: {
+      usePolling: true, // Helps with WSL2 file watching
+    },
   },
   plugins: [react()],
   resolve: {
@@ -18,5 +21,11 @@ export default defineConfig(() => ({
   },
   build: {
     outDir: "docs",
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      // Helps with WSL2 compatibility
+      target: "es2020",
+    },
   },
 }));
