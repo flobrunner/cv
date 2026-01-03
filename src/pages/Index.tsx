@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import profileImage from "@/assets/portrait.jpeg";
 import hoverImage from "@/assets/laughing.jpeg";
 import staticNoise from "@/assets/static-noise.wav";
+import cvFile from "@/assets/cv.pdf";
 
 const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -54,8 +55,8 @@ const Index = () => {
         {/* Links */}
         <nav className="flex items-center gap-4">
           <a
-            href="/cv.pdf"
-            download
+            href={cvFile}
+            download="Florian-Brunner-CV.pdf"
             className="flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
           >
             <Download className="w-4 h-4" />
