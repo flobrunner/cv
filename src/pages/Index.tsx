@@ -7,18 +7,8 @@ const Index = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background px-6 py-12">
+    <main className="min-h-screen flex items-center justify-center bg-background px-6 py-12 relative">
       <div className="flex flex-col items-center gap-8 max-w-md text-center">
-        {/* Name & Title */}
-        <div className="space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground">
-            Your Name
-          </h1>
-          <p className="text-muted-foreground">
-            Software Engineer · Designer · Creator
-          </p>
-        </div>
-
         {/* Profile Photo with Hover Effect */}
         <div
           className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-border shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105"
@@ -30,6 +20,16 @@ const Index = () => {
             alt="Profile photo"
             className="w-full h-full object-cover transition-opacity duration-300"
           />
+        </div>
+
+        {/* Name & Title */}
+        <div className="space-y-2">
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+            Your Name
+          </h1>
+          <p className="text-muted-foreground">
+            Software Engineer · Designer · Creator
+          </p>
         </div>
 
         {/* Links */}
@@ -72,12 +72,12 @@ const Index = () => {
             <Mail className="w-5 h-5" />
           </a>
         </div>
-
-        {/* Copyright Notice */}
-        <footer className="pt-8 text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
-        </footer>
       </div>
+
+      {/* Copyright Notice */}
+      <footer className="absolute bottom-4 right-4 text-sm text-muted-foreground">
+        © {new Date().getFullYear()} Your Name. All rights reserved.
+      </footer>
     </main>
   );
 };
