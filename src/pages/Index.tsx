@@ -32,12 +32,10 @@ const Index = () => {
             <button
               type="button"
               onClick={handlePlayStatic}
-              className="absolute inset-0 flex items-center justify-center bg-black/40 text-white transition-opacity"
+              className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-white text-foreground shadow-lg border border-border transition-transform duration-200 hover:scale-105"
               aria-label="Play call static sound"
             >
-              <span className="flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur">
-                <Phone className="w-7 h-7" />
-              </span>
+              <Phone className="w-6 h-6" />
             </button>
           ) : null}
         </div>
