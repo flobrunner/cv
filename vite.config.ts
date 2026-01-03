@@ -5,7 +5,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
   // GitHub Pages needs assets served from the repo sub-path
-  base: "/my-minimalist-cv/",
+  base: "/cv/",
   server: {
     host: "::",
     port: 8080,
