@@ -1,7 +1,7 @@
 import { Download, Linkedin, Mail, Github } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import profileImage from "@/assets/portrait-cropped.jpeg";
-import hoverImage from "@/assets/laughing-cropped.jpeg";
+import profileImage from "@/assets/portrait.jpeg";
+import hoverImage from "@/assets/laughing.jpeg";
 import cvFile from "@/assets/cv.pdf";
 
 const Index = () => {
